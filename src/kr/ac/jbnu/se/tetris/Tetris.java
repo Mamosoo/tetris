@@ -179,14 +179,54 @@ public class Tetris extends JFrame {
 
             case 'w':
                 board2.tryMove(board2.curPiece.rotateLeft(), board2.curX, board2.curY);
+
+                try {
+                    AudioInputStream kd = AudioSystem.getAudioInputStream(new File("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/ding1.wav"));
+
+                    Clip clip = AudioSystem.getClip();
+                    clip.stop();
+                    clip.open(kd);
+                    clip.start();
+                }
+                catch (Exception ex){
+
+                }
+
                 break;
 
             case 'W':
                 board2.tryMove(board2.curPiece.rotateLeft(), board2.curX, board2.curY);
+
+                try {
+                    AudioInputStream kd = AudioSystem.getAudioInputStream(new File("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/ding1_1.wav"));
+
+                    Clip clip = AudioSystem.getClip();
+                    clip.stop();
+                    clip.open(kd);
+                    clip.start();
+                }
+                catch (Exception ex){
+
+                }
+
                 break;
 
             case KeyEvent.VK_SHIFT:
                 board2.dropDown();
+
+                try {
+                    AudioInputStream kd = AudioSystem.getAudioInputStream(new File("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/gunshot1.wav"));
+
+                    Clip clip = AudioSystem.getClip();
+                    clip.stop();
+                    clip.open(kd);
+                    clip.start();
+                }
+                catch (Exception ex){
+
+                }
+
+
                 break;
 
         }
