@@ -17,7 +17,18 @@ import sun.audio.*;
 import java.io.*;
 
 
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
+
+
+import javax.swing.*;
+
 
 public class Tetris extends JFrame {
 
@@ -29,7 +40,6 @@ public class Tetris extends JFrame {
     Board board2 = new Board(statusbar2);
 
 
-
     public Tetris() {
 
         AudioPlayer MGP = AudioPlayer.player;
@@ -38,11 +48,10 @@ public class Tetris extends JFrame {
         ContinuousAudioDataStream loop = null;
 
         try {
-            BGM = new AudioStream(new FileInputStream("/Users/Mamosoo/Desktop/tetris/src/kr/ac/jbnu/se/tetris/resource/Hal_Final.wav"));
+            BGM = new AudioStream(new FileInputStream("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/Hal_Final.wav"));
             MD = BGM.getData();
             loop = new ContinuousAudioDataStream(MD);
-        }
-        catch (IOException error){
+        } catch (IOException error) {
             error.printStackTrace();
         }
         MGP.start(loop);
@@ -93,7 +102,6 @@ public class Tetris extends JFrame {
     }
 
 
-
     public void keyPressed(KeyEvent e) {
         int keycode = e.getKeyCode();
 
@@ -118,9 +126,30 @@ public class Tetris extends JFrame {
                 break;
             case KeyEvent.VK_UP:
                 board1.tryMove(board1.curPiece.rotateLeft(), board1.curX, board1.curY);
+
+                try {
+                    AudioInputStream ais = AudioSystem.getAudioInputStream(new File("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/ding.wav"));
+                    Clip clip = AudioSystem.getClip();
+                    clip.stop();
+                    clip.open(ais);
+                    clip.start();
+                } catch (Exception ex) {
+
+                }
                 break;
             case KeyEvent.VK_SPACE:
                 board1.dropDown();
+
+                try {
+                    AudioInputStream ais = AudioSystem.getAudioInputStream(new File("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/gunshot.wav"));
+                    Clip clip = AudioSystem.getClip();
+                    clip.stop();
+                    clip.open(ais);
+                    clip.start();
+                } catch (Exception ex) {
+
+                }
+
                 break;
 
 
