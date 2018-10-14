@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -72,6 +74,25 @@ public class Board extends JPanel implements ActionListener {
 
         newPiece();
         timer.start();
+    }
+
+    public void record(){
+
+
+        try {
+
+            FileWriter fw = new FileWriter("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/record.txt");
+            fw.write(numLinesRemoved);
+            System.out.print(numLinesRemoved);
+            fw.close();
+        }
+        catch (IOException err){
+            System.out.print("gae");
+
+        }
+
+
+
     }
 
     void pause() {
@@ -156,7 +177,10 @@ public class Board extends JPanel implements ActionListener {
             curPiece.setShape(Tetrominoes.NoShape);
             timer.stop();
             isStarted = false;
+            System.out.print("sibal");
+            record();
             statusbar.setText("game over");
+
         }
     }
 
