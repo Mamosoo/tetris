@@ -70,7 +70,7 @@ public class Main extends JFrame {
         panel.add(btnNewButton);
 
         JButton btnNewButton_1 = new JButton("RANKING");
-        btnNewButton.addMouseListener(new MouseAdapter() {
+        btnNewButton_1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 panel.removeAll();
