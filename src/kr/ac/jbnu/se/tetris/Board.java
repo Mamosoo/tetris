@@ -1,18 +1,12 @@
 package kr.ac.jbnu.se.tetris;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.Timer;
 
 public class Board extends JPanel implements ActionListener {
 
@@ -38,9 +32,11 @@ public class Board extends JPanel implements ActionListener {
         timer = new Timer(400, this);
         timer.start();
 
-        board = new Tetrominoes[BoardWidth * BoardHeight];
+         board = new Tetrominoes[BoardWidth * BoardHeight];
         clearBoard();
     }
+
+
 
     public void actionPerformed(ActionEvent e) {
         if (isFallingFinished) {
@@ -50,6 +46,10 @@ public class Board extends JPanel implements ActionListener {
             oneLineDown();
         }
     }
+
+
+
+
 
     int squareWidth() {
         return (int) getSize().getWidth() / BoardWidth;
@@ -74,17 +74,23 @@ public class Board extends JPanel implements ActionListener {
 
         newPiece();
         timer.start();
-    }
+    }===
 
     public void record(){
 
 
         try {
 
-            FileWriter fw = new FileWriter("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/record.txt");
-            fw.write(numLinesRemoved);
-            System.out.print(numLinesRemoved);
-            fw.close();
+            FileOutputStream fout = new FileOutputStream("abc.txt");
+           // fout.write("abc".getBytes());
+            fout.write(Integer.toString(numLinesRemoved).getBytes());
+            fout.flush();
+            fout.close();
+
+//            FileWriter fw = new FileWriter("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/record.txt");
+//            fw.write(numLinesRemoved);
+//            System.out.print(numLinesRemoved);
+//            fw.close();
         }
         catch (IOException err){
             System.out.print("gae");
@@ -177,9 +183,12 @@ public class Board extends JPanel implements ActionListener {
             curPiece.setShape(Tetrominoes.NoShape);
             timer.stop();
             isStarted = false;
-            System.out.print("sibal");
+            System.out.print("Hi");
             record();
             statusbar.setText("game over");
+            /*
+            To-Do 왜 안되는지 질문하기.
+             */
 
         }
     }
