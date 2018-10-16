@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d87c567b-de90-47f8-b2ae-2b470637f7b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetris/kr/ac/jbnu/se/tetris/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetris/kr/ac/jbnu/se/tetris/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tetris/kr/ac/jbnu/se/tetris/resource/record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tetris/kr/ac/jbnu/se/tetris/resource/record.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Board.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -38,13 +35,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1911" />
+          <entry key="java" value="1988" />
           <entry key="txt" value="51" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1911" />
+          <entry key="JAVA" value="1988" />
           <entry key="PLAIN_TEXT" value="51" />
         </counts>
       </usages-collector>
@@ -67,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+            <state relative-caret-position="346">
+              <caret line="86" column="25" lean-forward="true" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
               <folding>
                 <element signature="e#1517#1518#0" expanded="true" />
                 <element signature="e#1579#1580#0" expanded="true" />
@@ -85,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/abc.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+              <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -228,7 +225,7 @@
     <property name="SearchEverywhereHistoryKey" value="refrest&#9;ACTION&#9;Vcs.RefreshStatuses&#10;refresh&#9;ACTION&#9;ExternalSystem.RefreshAllProjects" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539671884349" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539671972232" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -307,12 +304,12 @@
       <updated>1538621280849</updated>
       <workItem from="1538621282346" duration="1001000" />
       <workItem from="1539106229987" duration="1657000" />
-      <workItem from="1539508339151" duration="21719000" />
+      <workItem from="1539508339151" duration="22010000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24377000" />
+    <option name="totallyTimeSpent" value="24668000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="23" width="1629" height="1027" extended-state="6" />
@@ -440,14 +437,14 @@
     <entry file="file://$PROJECT_DIR$/abc.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="1" />
+          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/kr/ac/jbnu/se/tetris/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+        <state relative-caret-position="346">
+          <caret line="86" column="25" lean-forward="true" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
           <folding>
             <element signature="e#1517#1518#0" expanded="true" />
             <element signature="e#1579#1580#0" expanded="true" />

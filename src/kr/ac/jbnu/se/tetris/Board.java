@@ -74,7 +74,7 @@ public class Board extends JPanel implements ActionListener {
 
         newPiece();
         timer.start();
-    }===
+    }
 
     public void record(){
 
