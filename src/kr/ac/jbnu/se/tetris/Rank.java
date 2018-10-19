@@ -16,7 +16,6 @@ public class Rank extends JFrame{
 
     JPanel jp = new JPanel(); // 패널 초기화
     JLabel jl = new JLabel("레이블"); // 레이블 초기화
-    JLabel call = new JLabel();
 
 
 
@@ -45,6 +44,7 @@ public class Rank extends JFrame{
 
             String[] split = line.split(" ");
 
+
             for (String num : split) {
                 list.add(Integer.valueOf(num));
             }
@@ -58,8 +58,13 @@ public class Rank extends JFrame{
                 highScore.add((int) num);
             }
 
-            System.out.println(highScore.toString());
-            jl.setText(highScore.toString());
+            String s = "";
+            int i = 1;
+            for(Integer v : highScore) {
+                s += i + "위 " + v + "\n";
+                i++;
+            }
+            jl.setText(convertToMultiline(s));
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -68,6 +73,11 @@ public class Rank extends JFrame{
             e.printStackTrace();
         }
 
+    }
+
+    public String convertToMultiline(String orig)
+    {
+        return "<html>" + orig.replaceAll("\n", "<br>");
     }
 }
 

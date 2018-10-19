@@ -75,7 +75,7 @@ public class Main extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 panel.removeAll();
                 new Rank().setVisible(true);
-                dispose(); 
+                dispose();
             }
         });
 
