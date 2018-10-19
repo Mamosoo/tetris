@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Board extends JPanel implements ActionListener {
 
@@ -32,10 +32,9 @@ public class Board extends JPanel implements ActionListener {
         timer = new Timer(400, this);
         timer.start();
 
-         board = new Tetrominoes[BoardWidth * BoardHeight];
+        board = new Tetrominoes[BoardWidth * BoardHeight];
         clearBoard();
     }
-
 
 
     public void actionPerformed(ActionEvent e) {
@@ -46,9 +45,6 @@ public class Board extends JPanel implements ActionListener {
             oneLineDown();
         }
     }
-
-
-
 
 
     int squareWidth() {
@@ -76,28 +72,45 @@ public class Board extends JPanel implements ActionListener {
         timer.start();
     }
 
-    public void record(){
+    public void record() {
 
+        java.util.List<Integer> list = new ArrayList<>();
+        try (FileOutputStream fout = new FileOutputStream("abc.txt", true);
+             BufferedReader br = new BufferedReader(new FileReader("abc.txt"))) {
 
-        try {
+            // fout.write("abc".getBytes());
 
-            FileOutputStream fout = new FileOutputStream("abc.txt");
-           // fout.write("abc".getBytes());
             fout.write(Integer.toString(numLinesRemoved).getBytes());
+            fout.write(" ".getBytes());
             fout.flush();
-            fout.close();
+
+            String line = br.readLine();
+            String[] split = line.split(" ");
+
+            for (String num : split) {
+                list.add(Integer.valueOf(num));
+            }
+
+            Collections.sort(list);
+            Collections.reverse(list);
+
+            java.util.List<Integer> highScore = new ArrayList<>();
+            for (Object num : list.stream().distinct().toArray()) {
+                highScore.add((int) num);
+            }
+            System.out.println(highScore.toString());
+            // todo highsocore.toString Rank 에 띄우기.
+          //  new Rank().call.setText(highScore.toString());
+
 
 //            FileWriter fw = new FileWriter("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/record.txt");
 //            fw.write(numLinesRemoved);
 //            System.out.print(numLinesRemoved);
 //            fw.close();
-        }
-        catch (IOException err){
+        } catch (IOException err) {
             System.out.print("gae");
 
         }
-
-
 
     }
 
@@ -183,7 +196,6 @@ public class Board extends JPanel implements ActionListener {
             curPiece.setShape(Tetrominoes.NoShape);
             timer.stop();
             isStarted = false;
-            System.out.print("Hi");
             record();
             statusbar.setText("game over");
             /*

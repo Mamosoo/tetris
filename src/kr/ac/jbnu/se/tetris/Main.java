@@ -74,8 +74,8 @@ public class Main extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 panel.removeAll();
-                new Tetris().setVisible(true);
-                dispose();
+                new Rank().setVisible(true);
+                dispose(); 
             }
         });
 
