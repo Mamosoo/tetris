@@ -1,5 +1,5 @@
 # Chonbuk National University 
-#Source Code Analysis Class Tetris Development
+# Source Code Analysis Class Tetris Development
 
 ### 한국어는 하단에 위치하고 있습니다(For Korean Users plz go to below)
 
