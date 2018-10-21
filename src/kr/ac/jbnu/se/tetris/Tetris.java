@@ -3,32 +3,17 @@ test commit
  */
 package kr.ac.jbnu.se.tetris;
 
-
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
-
 import javax.swing.*;
 
-import com.sun.org.apache.xml.internal.utils.URI;
 import sun.audio.*;
 
 import java.io.*;
-
-
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.swing.*;
-
-
-import javax.swing.*;
-
 
 public class Tetris extends JFrame {
 
@@ -187,8 +172,7 @@ public class Tetris extends JFrame {
                     clip.stop();
                     clip.open(kd);
                     clip.start();
-                }
-                catch (Exception ex){
+                } catch (Exception ex) {
 
                 }
 
@@ -204,8 +188,7 @@ public class Tetris extends JFrame {
                     clip.stop();
                     clip.open(kd);
                     clip.start();
-                }
-                catch (Exception ex){
+                } catch (Exception ex) {
 
                 }
 
@@ -221,8 +204,7 @@ public class Tetris extends JFrame {
                     clip.stop();
                     clip.open(kd);
                     clip.start();
-                }
-                catch (Exception ex){
+                } catch (Exception ex) {
 
                 }
 

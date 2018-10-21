@@ -99,16 +99,8 @@ public class Board extends JPanel implements ActionListener {
                 highScore.add((int) num);
             }
             System.out.println(highScore.toString());
-            // todo highsocore.toString Rank 에 띄우기.
-          //  new Rank().call.setText(highScore.toString());
-
-
-//            FileWriter fw = new FileWriter("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/record.txt");
-//            fw.write(numLinesRemoved);
-//            System.out.print(numLinesRemoved);
-//            fw.close();
+            // todo highsocore.toString Rank 에 띄우기. --> Finish~
         } catch (IOException err) {
-            System.out.print("gae");
 
         }
 
