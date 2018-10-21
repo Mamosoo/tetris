@@ -78,8 +78,6 @@ public class Board extends JPanel implements ActionListener {
         try (FileOutputStream fout = new FileOutputStream("abc.txt", true);
              BufferedReader br = new BufferedReader(new FileReader("abc.txt"))) {
 
-            // fout.write("abc".getBytes());
-
             fout.write(Integer.toString(numLinesRemoved).getBytes());
             fout.write(" ".getBytes());
             fout.flush();

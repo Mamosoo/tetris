@@ -239,7 +239,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/Tetris.java&#10;refre&#9;ACTION&#9;ExternalSystem.RefreshAllProjects&#10;refrest&#9;ACTION&#9;Vcs.RefreshStatuses&#10;refresh&#9;ACTION&#9;ExternalSystem.RefreshAllProjects" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540147585231" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540147665275" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
