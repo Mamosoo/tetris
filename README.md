@@ -1,3 +1,35 @@
+# Chonbuk National University Source Code Analysis Class Tetris Development
+
+### 한국어는 하단에 위치하고 있습니다(For Korean Users plz go to below)
+
+#### This Repository contains the process that devlopes Project of CBNU SCA class.
+
+This table shows the Priority of this project.
+
+To-do | Priority | Done 
+:--- | :---: | :-:
+Main-Page | 1st | V 
+BGM | 2nd | V 
+Effect-Sound | 2nd | V
+Rank | 3rd | V 
+2Player(Non Network) | 4th | V
+
+## Main-Page
+<img src = 'https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/44611135_1131929570307158_7162483205944115200_n.jpg?_nc_cat=102&_nc_ht=scontent-icn1-1.xx&oh=c98bc9619885b8dd849c953e5afbcf20&oe=5C49CEED' width = '200' height = '400' /> 
+
+#### Reformate the starting point & Add the button to access the rank
+
+## Rank
+
+<img src = 'https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/44458175_1131931816973600_5329260717264601088_n.jpg?_nc_cat=111&_nc_ht=scontent-icn1-1.xx&oh=e69e9625d50ce662e2d67eea9cb266cc&oe=5C432B72' width = '200' height = '400' /> 
+
+#### To store score to the text file By NumlineRemoved(at the Board.java). socre -> numline -> txt -> sort -> rank-panel
+
+## 2Player
+<img src = 'https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/44539064_1131929593640489_9173357533534879744_n.jpg?_nc_cat=102&_nc_ht=scontent-icn1-1.xx&oh=f697e54cd768d83e0425bf5ab053f417&oe=5C83FE94' width = '600' height = '400' /> 
+
+#### Add one more panel, JFrame, Label to making 2Player System
+
 # 전북대학교 소스코드분석 과목 Tetris
 
 #### 해당 레포는 2018년 전북대학교 소프트웨어공학과에서 진행하는 소스크드분석 과목의 과제인 Tetris 코드 분석의 내용을 디벨롭 시키는 과정을 담고 있는 레포입니다.
