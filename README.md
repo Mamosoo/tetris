@@ -58,3 +58,9 @@ Rank | 3rd | V
 <img src = 'https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/44539064_1131929593640489_9173357533534879744_n.jpg?_nc_cat=102&_nc_ht=scontent-icn1-1.xx&oh=f697e54cd768d83e0425bf5ab053f417&oe=5C83FE94' width = '600' height = '400' /> 
 
 #### 기존코드의 내용에서 패널, 프레임, 레이블을 추가하고 키입력 부분을 개선하여 2인용 테트리스를 구현 하였다.
+
+## Reference
+
+#### Sound : https://winsound.com/ (Up Arrow Key)
+#### Sound : https://www.freesoundeffects.com/free-sounds/gun-10081/ (Space Key)
+#### Sound :https://bgmstore.net/view/5bb0d095352039d22706a113/%ED%95%A0%EB%A0%90%EB%A3%A8%EC%95%BC/ (BGM)
