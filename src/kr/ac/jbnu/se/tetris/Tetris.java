@@ -38,7 +38,7 @@ public class Tetris extends JFrame {
         }
         MGP.start(loop);
 
-        board1.setBackground(Color.pink);
+        //board1.setBackground(Color.pink);
         score.setBackground(Color.orange);
         board2.setBackground(Color.pink);
 
@@ -105,9 +105,11 @@ public class Tetris extends JFrame {
                 break;
             case KeyEvent.VK_DOWN:
                 board1.oneLineDown();
+                board1.guideDonw();
                 break;
             case KeyEvent.VK_UP:
                 board1.tryMove(board1.curPiece.rotateLeft(), board1.curX, board1.curY);
+                board1.guideMove(board1.guidePiece.rotateLeft(),board1.curX,board1.curY);
 
                 try {
                     AudioInputStream ais = AudioSystem.getAudioInputStream(new File("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/ding.wav"));
@@ -161,6 +163,7 @@ public class Tetris extends JFrame {
 
             case 'w':
                 board2.tryMove(board2.curPiece.rotateLeft(), board2.curX, board2.curY);
+                board2.guideMove(board2.guidePiece.rotateLeft(),board2.curX,board2.curY);
 
                 try {
                     AudioInputStream kd = AudioSystem.getAudioInputStream(new File("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/ding1.wav"));
@@ -177,6 +180,7 @@ public class Tetris extends JFrame {
 
             case 'W':
                 board2.tryMove(board2.curPiece.rotateLeft(), board2.curX, board2.curY);
+                board2.guideMove(board2.guidePiece.rotateLeft(),board2.curX,board2.curY);
 
                 try {
                     AudioInputStream kd = AudioSystem.getAudioInputStream(new File("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/ding1_1.wav"));

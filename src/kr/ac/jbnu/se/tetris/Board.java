@@ -4,7 +4,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -20,15 +23,20 @@ public class Board extends JPanel implements ActionListener {
     int numLinesRemoved = 0;
     int curX = 0;
     int curY = 0;
+    int guideX = 0;
+    int guideY = 0;
     JLabel statusbar;
     Shape curPiece;
+    Shape guidePiece;
     Tetrominoes[] board;
+    int top = 0;
 
     public Board(JLabel statusbar) {
 
         setFocusable(true);
         this.statusbar = statusbar;
         curPiece = new Shape();
+        guidePiece = new Shape();
         timer = new Timer(400, this);
         timer.start();
 
@@ -123,6 +131,16 @@ public class Board extends JPanel implements ActionListener {
         super.paint(g);
 
         Dimension size = getSize();
+
+        int backGroundColor;
+        int boartTop = (int) size.getHeight() - BoardHeight * squareHeight();
+
+        backGroundColor = (top * 10) + 20;
+
+        g.setColor(new Color(backGroundColor,0,0));
+        g.fillRect(0,0,this.getWidth(),this.getHeight());
+
+
         int boardTop = (int) size.getHeight() - BoardHeight * squareHeight();
 
         for (int i = 0; i < BoardHeight; ++i) {
@@ -141,6 +159,18 @@ public class Board extends JPanel implements ActionListener {
                         curPiece.getShape());
             }
         }
+        if (guidePiece.getShape() != Tetrominoes.NoShape) {
+            for (int i = 0; i < 4; ++i) {
+                int x = guideX + guidePiece.x(i);
+                int y = guideY - guidePiece.y(i);
+                drawSquare(g, 0 + x * squareWidth(), boardTop + (BoardHeight - y - 1) * squareHeight(),
+                        guidePiece.getShape());
+            }
+        }
+
+
+
+
     }
 
     void dropDown() {
@@ -151,6 +181,16 @@ public class Board extends JPanel implements ActionListener {
             --newY;
         }
         pieceDropped();
+    }
+
+    void guideDonw(){
+        int newY = curY;
+        while (newY > 0) {
+            if (!guideMove(guidePiece, curX, newY - 1))
+                break;
+            --newY;
+        }
+
     }
 
     void oneLineDown() {
@@ -172,6 +212,7 @@ public class Board extends JPanel implements ActionListener {
         }
 
         removeFullLines();
+        findTop();
 
         if (!isFallingFinished)
             newPiece();
@@ -181,7 +222,8 @@ public class Board extends JPanel implements ActionListener {
         curPiece.setRandomShape();
         curX = BoardWidth / 2 + 1;
         curY = BoardHeight - 1 + curPiece.minY();
-
+        guidePiece = curPiece;
+        guideDonw();
         if (!tryMove(curPiece, curX, curY)) {
             curPiece.setShape(Tetrominoes.NoShape);
             timer.stop();
@@ -205,11 +247,41 @@ public class Board extends JPanel implements ActionListener {
                 return false;
         }
 
+
         curPiece = newPiece;
         curX = newX;
         curY = newY;
+        guideDonw();
+
+        return true;
+    }
+
+    boolean guideMove(Shape newPiece, int newX, int newY){
+        for (int i = 0; i < 4; ++i) {
+            int x = newX + newPiece.x(i);
+            int y = newY - newPiece.y(i);
+            if (x < 0 || x >= BoardWidth || y < 0 || y >= BoardHeight)
+                return false;
+            if (shapeAt(x, y) != Tetrominoes.NoShape)
+                return false;
+        }
+        guidePiece = newPiece;
+        guideX = newX;
+        guideY = newY;
         repaint();
         return true;
+    }
+
+    void findTop(){
+        for(int i = BoardHeight-1;i>=0;--i){
+            for(int j = 0;j<BoardWidth;++j){
+                if (shapeAt(j,i) != Tetrominoes.NoShape){
+                    top = i;
+                    i = 0;
+                    break;
+                }
+            }
+        }
     }
 
     private void removeFullLines() {
