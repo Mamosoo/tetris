@@ -17,10 +17,9 @@ public class Tetris extends JFrame {
     JLabel statusbar1 = new JLabel("0", JLabel.CENTER);
     JLabel statusbar2 = new JLabel("0", JLabel.CENTER);
 
-    Board board1 = new Board(statusbar1);
     JPanel score = new JPanel(new GridLayout(2, 1));
+    Board board1 = new Board(statusbar1);
     Board board2 = new Board(statusbar2);
-
 
     public Tetris() {
 
@@ -28,7 +27,7 @@ public class Tetris extends JFrame {
         AudioStream BGM;
         AudioData MD;
         ContinuousAudioDataStream loop = null;
-
+/*
         try {
             BGM = new AudioStream(new FileInputStream("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/Hal_Final.wav"));
             MD = BGM.getData();
@@ -38,7 +37,12 @@ public class Tetris extends JFrame {
         }
         MGP.start(loop);
 
+
         //board1.setBackground(Color.pink);
+=
+*/
+        board1.setBackground(Color.pink);
+
         score.setBackground(Color.orange);
         board2.setBackground(Color.pink);
 

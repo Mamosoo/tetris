@@ -49,6 +49,7 @@ public class Main extends JFrame {
         AudioStream BGM;
         AudioData MD;
         ContinuousAudioDataStream loop = null;
+
         try {
             BGM = new AudioStream(new FileInputStream("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/Hal_Final.wav"));
             MD = BGM.getData();
@@ -57,6 +58,10 @@ public class Main extends JFrame {
             error.printStackTrace();
         }
         MGP.start(loop);
+
+
+       //todo 음악 제생부 메모
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 200, 400);
         contentPane = new JPanel();
@@ -113,6 +118,7 @@ public class Main extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 MGP.stop(finalLoop);
+
             }
         });
 
