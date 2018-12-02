@@ -100,4 +100,10 @@ public class Shape {
         }
         return result;
     }
+    public void setBrick() {
+        Random r = new Random();
+        int x = Math.abs(r.nextInt()) % 2;
+        Tetrominoes[] values = Tetrominoes.values();
+        setShape(values[x]);
+    }
 }

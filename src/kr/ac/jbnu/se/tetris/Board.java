@@ -24,13 +24,35 @@ public class Board extends JPanel implements ActionListener {
     Shape curPiece;
     Tetrominoes[] board;
 
+    Board board2;
+
+    //todo 여기서부터 스테이지 코드
+    int Limit, Level;
+    int Difficulty = 600;
+    Shape shape2 = new Shape();
+
+
     public Board(JLabel statusbar) {
 
         setFocusable(true);
         this.statusbar = statusbar;
         curPiece = new Shape();
-        timer = new Timer(400, this);
-        timer.start();
+        timer = new Timer(Difficulty, this);
+        Limit = 1;
+        Level = 1;
+
+        board = new Tetrominoes[BoardWidth * BoardHeight];
+        clearBoard();
+    }
+
+    public Board(JLabel statusbar,Board board2) {
+        this.board2 = board2;
+        setFocusable(true);
+        this.statusbar = statusbar;
+        curPiece = new Shape();
+        timer = new Timer(Difficulty, this);
+        Limit = 1;
+        Level = 1;
 
         board = new Tetrominoes[BoardWidth * BoardHeight];
         clearBoard();
@@ -236,9 +258,24 @@ public class Board extends JPanel implements ActionListener {
 
         if (numFullLines > 0) {
             numLinesRemoved += numFullLines;
-            statusbar.setText(String.valueOf(numLinesRemoved));
-            isFallingFinished = true;
-            curPiece.setShape(Tetrominoes.NoShape);
+
+            if (numLinesRemoved > Limit)
+            {
+                System.out.println("HI");
+                StageUp(Level);
+                Level++;
+                Limit += 2;
+                statusbar.setText("Congratulation! Press 'p'");
+                isPaused = true;
+                board2.isPaused = true;
+                board2.timer.stop();
+            } else
+            {
+                statusbar.setText(String.valueOf(numLinesRemoved));
+                isFallingFinished = true;
+                curPiece.setShape(Tetrominoes.NoShape);
+                repaint();
+            }
             repaint();
         }
     }
@@ -261,4 +298,17 @@ public class Board extends JPanel implements ActionListener {
         g.drawLine(x + 1, y + squareHeight() - 1, x + squareWidth() - 1, y + squareHeight() - 1);
         g.drawLine(x + squareWidth() - 1, y + squareHeight() - 1, x + squareWidth() - 1, y + 1);
     }
+    public void StageUp(int Level) {
+        timer.stop();
+        clearBoard();
+        if(Difficulty>40) {
+            Difficulty-=80;
+            timer.setDelay(Difficulty);
+            for(int i=0; i<Level*10; i++) {
+                shape2.setBrick();
+                board[i]=shape2.getShape();
+            }
+        }
+    }
+
 }
