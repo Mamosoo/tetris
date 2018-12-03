@@ -27,20 +27,7 @@ public class Tetris extends JFrame {
         AudioStream BGM;
         AudioData MD;
         ContinuousAudioDataStream loop = null;
-/*
-        try {
-            BGM = new AudioStream(new FileInputStream("/Users/Mamosoo/tetris/src/kr/ac/jbnu/se/tetris/resource/Hal_Final.wav"));
-            MD = BGM.getData();
-            loop = new ContinuousAudioDataStream(MD);
-        } catch (IOException error) {
-            error.printStackTrace();
-        }
-        MGP.start(loop);
 
-
-        //board1.setBackground(Color.pink);
-=
-*/
         board1.setBackground(Color.pink);
 
         score.setBackground(Color.orange);
