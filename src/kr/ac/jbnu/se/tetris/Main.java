@@ -26,7 +26,7 @@ public class Main extends JFrame {
     private JPanel contentPane;
 
     /**
-            * Launch the application.
+     * Launch the application.
      */
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -60,7 +60,7 @@ public class Main extends JFrame {
         MGP.start(loop);
 
 
-       //todo 음악 제생부 메모
+        //todo 음악 제생부 메모
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 200, 400);

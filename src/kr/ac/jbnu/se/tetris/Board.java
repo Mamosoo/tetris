@@ -55,7 +55,7 @@ public class Board extends JPanel implements ActionListener {
         clearBoard();
     }
 
-    public Board(JLabel statusbar,Board board2) {
+    private Board(JLabel statusbar,Board board2) {
         this.board2 = board2;
         setFocusable(true);
         this.statusbar = statusbar;
@@ -79,11 +79,11 @@ public class Board extends JPanel implements ActionListener {
     }
 
 
-    int squareWidth() {
+   private int squareWidth() {
         return (int) getSize().getWidth() / BoardWidth;
     }
 
-    int squareHeight() {
+   private int squareHeight() {
         return (int) getSize().getHeight() / BoardHeight;
     }
 
@@ -104,7 +104,7 @@ public class Board extends JPanel implements ActionListener {
         timer.start();
     }
 
-    public void record() {
+    private void record() {
 
         java.util.List<Integer> list = new ArrayList<>();
         try (FileOutputStream fout = new FileOutputStream("abc.txt", true);
@@ -136,7 +136,7 @@ public class Board extends JPanel implements ActionListener {
 
     }
 
-    void pause() {
+    public void pause() {
         if (!isStarted)
             return;
 
@@ -196,7 +196,7 @@ public class Board extends JPanel implements ActionListener {
 
     }
 
-    void dropDown() {
+    public void dropDown() {
         int newY = curY;
         while (newY > 0) {
             if (!tryMove(curPiece, curX, newY - 1))
@@ -206,7 +206,7 @@ public class Board extends JPanel implements ActionListener {
         pieceDropped();
     }
 
-    void guideDonw(){
+    public void guideDonw(){
         int newY = curY;
         while (newY > 0) {
             if (!guideMove(guidePiece, curX, newY - 1))
@@ -216,7 +216,7 @@ public class Board extends JPanel implements ActionListener {
 
     }
 
-    void oneLineDown() {
+    public void oneLineDown() {
         if (!tryMove(curPiece, curX, curY - 1))
             pieceDropped();
     }
@@ -260,7 +260,7 @@ public class Board extends JPanel implements ActionListener {
         }
     }
 
-    boolean tryMove(Shape newPiece, int newX, int newY) {
+   public boolean tryMove(Shape newPiece, int newX, int newY) {
         for (int i = 0; i < 4; ++i) {
             int x = newX + newPiece.x(i);
             int y = newY - newPiece.y(i);
@@ -295,7 +295,7 @@ public class Board extends JPanel implements ActionListener {
         return true;
     }
 
-    void findTop(){
+   private void findTop(){
         for(int i = BoardHeight-1;i>=0;--i){
             for(int j = 0;j<BoardWidth;++j){
                 if (shapeAt(j,i) != Tetrominoes.NoShape){
