@@ -13,6 +13,9 @@ BGM | 2nd | V
 Effect-Sound | 2nd | V
 Rank | 3rd | V 
 2Player(Non Network) | 4th | V
+BGM ON/OFF | 5th | V
+Back ground color change | 6th | V
+Guide Line | 7th | V
 
 ## Main-Page
 <img src = 'https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/44611135_1131929570307158_7162483205944115200_n.jpg?_nc_cat=102&_nc_ht=scontent-icn1-1.xx&oh=c98bc9619885b8dd849c953e5afbcf20&oe=5C49CEED' width = '200' height = '400' /> 
@@ -42,6 +45,9 @@ Rank | 3rd | V
 효과음 | 2순위 | V
 랭킹 | 3순위 | V 
 2인용 | 4순위 | V
+배경음 끄기 | 5순위 | V
+배경색 변경 | 6순위 | V
+가이드라인(블록높이) | 7순위 | V
 
 ## 메인페이지
 <img src = 'https://scontent-icn1-1.xx.fbcdn.net/v/t1.0-9/44611135_1131929570307158_7162483205944115200_n.jpg?_nc_cat=102&_nc_ht=scontent-icn1-1.xx&oh=c98bc9619885b8dd849c953e5afbcf20&oe=5C49CEED' width = '200' height = '400' /> 

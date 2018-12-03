@@ -336,20 +336,6 @@ public class Board extends JPanel implements ActionListener {
            statusbar.setText(String.valueOf(numLinesRemoved));
                       isFallingFinished = true;
                       curPiece.setShape(Tetrominoes.NoShape);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             repaint();
         }
 
