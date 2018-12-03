@@ -333,25 +333,26 @@ public class Board extends JPanel implements ActionListener {
         if (numFullLines > 0) {
             numLinesRemoved += numFullLines;
 
-            if (numLinesRemoved > Limit)
-            {
-                System.out.println("HI");
-                StageUp(Level);
-                Level++;
-                Limit += 2;
-                statusbar.setText("Congratulation! Press 'p'");
-                isPaused = true;
-                board2.isPaused = true;
-                board2.timer.stop();
-            } else
-            {
-                statusbar.setText(String.valueOf(numLinesRemoved));
-                isFallingFinished = true;
-                curPiece.setShape(Tetrominoes.NoShape);
-                repaint();
-            }
+           statusbar.setText(String.valueOf(numLinesRemoved));
+                      isFallingFinished = true;
+                      curPiece.setShape(Tetrominoes.NoShape);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             repaint();
         }
+
     }
 
     private void drawSquare(Graphics g, int x, int y, Tetrominoes shape) {
